@@ -1,0 +1,392 @@
+.button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 50%;
+  }
+body{
+  background-color: rgb(186, 199, 255);
+}
+ .container1 {
+  background-color: rgb(186, 199, 255);
+  width: 1100px;
+  height: 900px;
+  /*border: 3px solid rgb(32, 134, 168);*/
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  top: 90px;
+  right: 40px;
+  justify-content: center;
+  align-items: flex-end;
+  
+}
+.container2 {
+  background-color: rgb(186, 199, 255);
+  border: 3px solid rgb(186, 199, 255);
+  width: 600px;
+  height: 900px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  top: -3px;
+  left: -600px;
+  justify-content: center;
+  align-items: center;
+}
+.bieudoline {
+  width: 200px;
+  margin: 10px;
+  margin-right: -1000px;
+  margin-top: auto;
+  border: 3px solid #333;
+  background-color: #dfdfdf;
+  border: 3px solid rgb(32, 134, 168);
+  
+}
+
+.bieudochart {
+  width: 250px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin-right: 800px;
+  margin-top: auto;
+  
+  background-color: #ffffff;
+  border: 3px solid rgb(32, 134, 168);
+  
+}
+
+.relay {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  margin: 10px;
+  margin-top: -20px;
+  border: 3px solid rgb(32, 134, 168);
+  background-color: #ffffff;
+}
+
+.bieudo1{
+  width: 605px;
+  height: 265px;
+}
+.bieudo2{
+  width: 605px;
+  height: 265px;
+ }
+ .bieudo3{
+  width: 605px;
+  height: 265px;
+ }
+ .bieudo4{
+  width: 265px;
+  height: 265px;
+ }
+ .bieudo5{
+  width: 265px;
+  height: 265px;
+ }
+ .bieudo6{
+  width: 265px;
+  height: 265px;
+ }
+ .Button{
+  margin-top: -150px;
+  width: 180px;
+  height: 180px;
+ }
+ .Fan{
+  margin-top: -150px;
+  width: 180px;
+  height: 180px;
+ }
+ .Time{
+  margin: 10px;
+  margin-top: -150px;
+  width: 500px;
+  height: 200px;  
+ }
+ .Time h1{
+    align-items: center;
+    text-align: center;
+ }
+ .Name{
+  width: 180px;
+  height: 180px; 
+ }
+ .StatR1{
+
+  width: 180px;
+  height: 180px;
+ }
+ .StatR2{
+  margin-top: -150px;
+  width: 180px;
+  height: 180px;
+ }
+ 
+ .StatR3{
+  margin-top: -150px;
+  width: 180px;
+  height: 180px;
+ }
+ .Stat1{
+
+  margin-left: 25px;
+  margin-top: -80px;
+  font-size: 35px;
+ }
+ .Stat2{
+  margin-left: 25px;
+  margin-top: -80px;
+  font-size: 35px;
+ 
+ }
+ 
+ .Stat3{
+  margin-left: 25px;
+  margin-top: -80px;
+  font-size: 35px;
+ }
+
+ .textName{ 
+  color: #fff;
+  font-size: 30px;
+  padding: 5px; /* Màu chữ */
+  text-align: center;
+  padding-left: 30px;
+ }
+ .textStat{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center; /* Căn lề giữa theo chiều ngang bằng Flexbox */
+  align-items: center;
+  padding: 10px; 
+  padding-left: 50px; 
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center
+  
+ }
+
+ t1{
+  color: #0602e7;
+  text-align: center;
+  padding: 10px 0;
+  padding-right: 25px;
+  pointer-events: none;
+ }
+ a1{
+  color: #0602e7;
+  font-weight: 800;
+  text-align: center;
+  padding: 10px 0;
+  padding-right: 25px;
+  pointer-events: none;
+ }
+ .textButton{
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 80px;
+  padding: 10px; /* Màu chữ */
+  padding-left: 50px; /* Khoảng cách giữa nội dung và mép trên cùng */
+  text-align: left; /* Căn giữa nội dung */
+ }
+ 
+.buttonbox{
+  position: absolute;
+  top: 62%;
+  left: 21%;
+  transform: translate(-50%,-50%);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  
+ }
+
+.buttonbox .toggleNode1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 50px;
+  background-color: #444;
+  border-radius: 30px;
+  transition: 0.3s;
+  
+ }
+ .buttonbox .toggleNode1 .toggleNode1-button{
+  position: absolute;
+  top: 5px;
+  left: 5px; 
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+ }
+
+ .buttonbox .toggleNode1.active{
+  background: rgb(0, 54, 155);
+ }
+ .buttonbox .toggleNode1.active .toggleNode1-button{
+  left: 45px;
+ }
+ .buttonbox .textNode1{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
+
+ 
+.buttonbox1{
+  position: absolute;
+  top: 62%;
+  left: 55%;
+  transform: translate(-50%,-50%);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  
+ }
+
+ .buttonbox1 .toggle2Node1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 50px;
+  background-color: #444;
+  border-radius: 30px;
+  transition: 0.3s;
+  
+ }
+ .buttonbox1 .toggle2Node1 .toggleNode1-button1{
+  position: absolute;
+  top: 5px;
+  left: 5px; 
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+ }
+ 
+.buttonbox1 .toggle2Node1.active{
+  background: rgb(0, 54, 155);
+ }
+ .buttonbox1 .toggle2Node1.active .toggleNode1-button1{
+  left: 45px;
+ }
+ .buttonbox1 .text1Node1{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
+
+ 
+ 
+
+
+.buttonbox .toggleNode2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 50px;
+  background-color: #444;
+  border-radius: 30px;
+  transition: 0.3s;
+  
+ }
+ .buttonbox .toggleNode2 .toggleNode2-button{
+  position: absolute;
+  top: 5px;
+  left: 5px; 
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+ }
+
+ .buttonbox .toggleNode2.active{
+  background: rgb(0, 54, 155);
+ }
+ .buttonbox .toggleNode2.active .toggleNode2-button{
+  left: 45px;
+ }
+ .buttonbox .textNode2{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
+
+
+ .buttonbox1 .toggle2Node2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 50px;
+  background-color: #444;
+  border-radius: 30px;
+  transition: 0.3s;
+  
+ }
+ .buttonbox1 .toggle2Node2 .toggleNode2-button1{
+  position: absolute;
+  top: 5px;
+  left: 5px; 
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+ }
+ 
+.buttonbox1 .toggle2Node2.active{
+  background: rgb(0, 54, 155);
+ }
+ .buttonbox1 .toggle2Node2.active .toggleNode2-button1{
+  left: 45px;
+ }
+ .buttonbox1 .text1Node2{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
