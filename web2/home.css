@@ -1,0 +1,102 @@
+
+.zoom {
+    zoom: 67%;
+  }
+
+body{
+    background-color: rgb(186, 199, 255);
+
+}
+.container3 {
+    background-color: rgb(186, 199, 255);
+    /*border: 3px solid rgb(0, 255, 34);*/
+    width: 1500px;
+    height: 600px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homebox {
+    margin: 50px;
+    border: 3px solid rgb(32, 134, 168);
+    background-color: #fefffe;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+.box1{
+    height: 550px;
+    width: 600px;
+}
+.box2{
+    height: 550px;
+    width: 600px;
+}
+.box1-1{
+    background-color: #00ff73;
+    text-align: center;
+    height: 150px;
+    width: 594px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.texthome{
+    margin: 15px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.box1-2{
+    height: 90px;
+    width: 160px
+}
+.box1-3{
+    height: 90px;
+    width: 160px
+}
+.box1-4{
+    height: 90px;
+    width: 160px
+}
+.box1-5{
+    height: 90px; 
+    width: 200px
+}
+.box1-6{
+    height: 90px;
+    width: 200px
+}
+.box1-7{
+    height: 100px; 
+    width: 550px
+}
+
+s1{
+    color: #8d63ff;
+    font-weight: 800;
+    text-align: center;
+    font-size: 50px;
+    padding: 10px 0;
+    padding-right: 30px;
+    pointer-events: none;
+}
+s2{
+    color: #84818d;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 0;
+    padding-right: 5px;
+    pointer-events: none;
+}
