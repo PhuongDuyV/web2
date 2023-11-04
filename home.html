@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="menu.css" >
     <link rel="stylesheet" type="text/css" href="home.css" >
@@ -177,7 +179,7 @@
             <div class = "relay Button">
               <div class ="buttonbox">
                 <div class = "toggleNode1">
-                  <div id = "RL1_P"class ="toggleNode1-button" onclick ="AnimatedtoggleNode1(1); GETBUTTON(1)"></div>
+                  <input id = "RL1_P" class ="toggleNode1-button" value="OFF" onclick ="AnimatedtoggleNode1(1); GETBUTTON(1)"></input>
                   </div>
                     <div class="textNode1">OFF</div>
                    </div>
@@ -188,7 +190,7 @@
             <div class = "relay Fan">
               <div class ="buttonbox1">
                 <div class = "toggle2Node1">
-                  <div class ="toggleNode1-button1" onclick ="AnimatedtoggleNode1(2); GETBUTTON(3)"></div>
+                  <input id = "RL1_F" class ="toggleNode1-button1" value="OFF" onclick ="AnimatedtoggleNode1(2); GETBUTTON(3)"></input>
                   </div>
                     <div class="text1Node1">OFF</div>
                    </div>
@@ -420,7 +422,7 @@
             <div class = "relay Button">
               <div class ="buttonbox">
                 <div class = "toggleNode2">
-                  <div class ="toggleNode2-button" onclick ="AnimatedtoggleNode2(1);GETBUTTON(1)"></div>
+                  <input id="RL2_P"class ="toggleNode2-button" value="OFF" onclick ="AnimatedtoggleNode2(1);GETBUTTON(4)"></input>
                   </div>
                     <div class="textNode2">OFF</div>
                    </div>
@@ -432,7 +434,7 @@
             <div class = "relay Fan">
               <div class ="buttonbox1">
                 <div class = "toggle2Node2">
-                  <div class ="toggleNode2-button1" onclick ="AnimatedtoggleNode2(2);GETBUTTON(3)"></div>
+                  <input id="RL2_F" class ="toggleNode2-button1" value="OFF" onclick ="AnimatedtoggleNode2(2);GETBUTTON(5)"></input>
                   </div>
                     <div class="text1Node2">OFF</div>
                    </div>
@@ -624,7 +626,7 @@
           });
       
       </script>
-  <script src="data1.js"></script>
-  <script src="data2.js"></script>
+  <script src="data.js"></script>
+ 
   </body>
 </html>
