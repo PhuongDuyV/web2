@@ -1435,55 +1435,59 @@ function MessageArrived(message)
 		document.getElementById("ND2").innerHTML = ND2;
 		document.getElementById("DA2").innerHTML = DA2;
 		document.getElementById("SSD2").innerHTML = SSD2;
+		var currentRL1_PValue = document.getElementById("RL1_P").value;
+		var currentRL1_FValue = document.getElementById("RL1_F").value;
+		var currentRL2_PValue = document.getElementById("RL2_P").value;
+		var currentRL2_FValue = document.getElementById("RL2_F").value;
 
-
-			if(DataJson.RL1_P == 1)
+				if(DataJson.RL1_P == 1 && currentRL1_PValue !== "ON")
 			  {
 				document.getElementById("RL1_P").value = "ON";
-				AnimatedtoggleNode1(1)
+				AnimatedtoggleNode1(1);
 			  }
-			  else if(DataJson.RL1_P == 0)
+			  else if(DataJson.RL1_P == 0 && currentRL1_PValue !== "OFF")
 			  {
 				document.getElementById("RL1_P").value = "OFF";
-				AnimatedtoggleNode1(1)
-
+				AnimatedtoggleNode1(1);
 			  } 
 
-			  if(DataJson.RL1_F == 1)
+			  if(DataJson.RL1_F == 1 && currentRL1_FValue !== "ON")
 			  {
 				document.getElementById("RL1_F").value = "ON";
-				AnimatedtoggleNode1(1)
+				AnimatedtoggleNode1(2);
 				
 			  }
-			  else if(DataJson.RL1_F == 0)
+			  else if(DataJson.RL1_F == 0 && currentRL1_FValue !== "OFF")
 			  {
 				document.getElementById("RL1_F").value = "OFF";
-				AnimatedtoggleNode1(1)
+				AnimatedtoggleNode1(2);
 			  } 
 			  
 
-			  if(DataJson.RL2_P == 1)
+
+			  if(DataJson.RL2_P == 1 && currentRL2_PValue !== "ON")
 			  {
 				document.getElementById("RL2_P").value = "ON";
-				AnimatedtoggleNode2(2)
+				AnimatedtoggleNode2(1)
 			  }
-			  else if(DataJson.RL2_P == 0)
+			  else if(DataJson.RL2_P == 0 && currentRL2_PValue !== "OFF")
 			  {
 				document.getElementById("RL2_P").value = "OFF";
-				AnimatedtoggleNode2(2)
+				AnimatedtoggleNode2(1)
 			  } 
 	  
-			  if(DataJson.RL2_F == 1)
+			  if(DataJson.RL2_F == 1 && currentRL2_FValue !== "ON")
 			  {
 				document.getElementById("RL2_F").value = "ON";
 				AnimatedtoggleNode2(2)
 			  }
-			  else if(DataJson.RL2_F == 0)
+			  else if(DataJson.RL2_F == 0 && currentRL2_FValue !== "OFF")
 			  {
 				document.getElementById("RL2_F").value = "OFF";
 				AnimatedtoggleNode2(2)
 			  } 
 					
+
 
 
 
