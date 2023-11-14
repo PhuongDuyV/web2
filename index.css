@@ -263,6 +263,14 @@
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 10px;
  }
+ .buttonbox .textNode1home{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
 
  
 .buttonbox1{
@@ -316,6 +324,14 @@
   margin-left: 10px;
  }
 
+ .buttonbox1 .text1Node1home{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
  
  
 
@@ -358,6 +374,15 @@
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 10px;
  }
+ .buttonbox .textNode2home{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
+
 
 
  .buttonbox1 .toggle2Node2{
@@ -391,6 +416,14 @@
   left: 45px;
  }
  .buttonbox1 .text1Node2{
+  color: #0602e7;
+  position: absolute;
+  left: 90px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+ }
+ .buttonbox1 .text1Node2home{
   color: #0602e7;
   position: absolute;
   left: 90px;
