@@ -2,21 +2,27 @@ let toggleNode1 = document.querySelector(".toggleNode1");
 let toggle2Node1 = document.querySelector(".toggle2Node1");
 let textNode1 = document.querySelector(".textNode1");
 let text1Node1 = document.querySelector(".text1Node1");
+let textNode1home = document.querySelector(".textNode1home");
+let text1Node1home = document.querySelector(".text1Node1home");
 function AnimatedtoggleNode1(buttonNumber){
   if (buttonNumber === 1) {
   toggleNode1.classList.toggle("active");
   if(toggleNode1.classList.contains("active")){
     textNode1.innerHTML = "ON";
+	textNode1home.innerHTML = "ON";
   }
   else{
     textNode1.innerHTML = "OFF";
+	textNode1home.innerHTML = "OFF";
   } 
   } else if (buttonNumber === 2) {
     toggle2Node1.classList.toggle("active");
     if (toggle2Node1.classList.contains("active")) {
       text1Node1.innerHTML = "ON";
+	  text1Node1home.innerHTML = "ON";
     } else {
       text1Node1.innerHTML = "OFF";
+	  text1Node1home.innerHTML = "OFF";
     }
 }
 }
@@ -26,21 +32,27 @@ let toggleNode2 = document.querySelector(".toggleNode2");
 let toggle2Node2 = document.querySelector(".toggle2Node2");
 let textNode2 = document.querySelector(".textNode2");
 let text1Node2 = document.querySelector(".text1Node2");
+let textNode2home = document.querySelector(".textNode2home");
+let text1Node2home = document.querySelector(".text1Node2home");
 function AnimatedtoggleNode2(buttonNumber2){
   if (buttonNumber2 === 1) {
   toggleNode2.classList.toggle("active");
   if(toggleNode2.classList.contains("active")){
     textNode2.innerHTML = "ON";
+	textNode2home.innerHTML = "ON";
   }
   else{
     textNode2.innerHTML = "OFF";
+	textNode2home.innerHTML = "OFF";
   } 
   } else if (buttonNumber2 === 2) {
     toggle2Node2.classList.toggle("active");
     if (toggle2Node2.classList.contains("active")) {
       text1Node2.innerHTML = "ON";
+	  text1Node2home.innerHTML = "ON";
     } else {
       text1Node2.innerHTML = "OFF";
+	  text1Node2home.innerHTML = "OFF";
     }
 }}
 
@@ -68,6 +80,10 @@ var S2 = "0";
 
 var T1 = "0";
 var T2 = "0";
+
+
+
+
 
 var LineND2 = false;
 var LineDA2 = false;
@@ -215,7 +231,7 @@ function LoadForm()
 			document.getElementById("quanlytuoicay1").style.display = "block";	
 			document.getElementById("quanlytuoicay2").style.display = "block";	
 			document.getElementById("quanlytuoicay3").style.display = "block";	
-
+			
 
         }
  google.charts.load('current', {'packages':['gauge']});
@@ -1384,211 +1400,6 @@ function ConnectionLost(res) {
 	}
 }
 
-function MessageArrived(message) 
-{
-	console.log("Data ESP:" + message.payloadString);
-	
-	
-	IsJsonString(message.payloadString);
-	
-	if(checkjson)
-	{
-	   console.log("JSON OK!!!");
-	   var  DataVDK = message.payloadString;            
-       console.log("Dữ liệu VDK:" + DataVDK);
-		
-		var DataJson = JSON.parse(DataVDK); 
- 
-			 
-		ND1 =  DataJson.ND1;
-		DA1 = DataJson.DA1;
-		SSD1 = DataJson.SSD1;
-
-		
-		LineND1_0 = DataJson.ND1;
-		
-		LineDA1_0 = DataJson.DA1;
-
-		LineSSD1_0 = DataJson.SSD1;
-		
-		//--------------
-			 
-		ND2 =  DataJson.ND2;
-		DA2 = DataJson.DA2;
-		SSD2 = DataJson.SSD2;
-
-		
-		LineND2_0 = DataJson.ND2;
-		
-		LineDA2_0 = DataJson.DA2;
-		
-		LineSSD2_0 = DataJson.SSD2;
-		
-	
-		document.getElementById("T1").innerHTML = DataJson.T1;
-		document.getElementById("T2").innerHTML = DataJson.T2;
-		
-		document.getElementById("ND1").innerHTML = ND1;
-		document.getElementById("DA1").innerHTML = DA1;
-		document.getElementById("SSD1").innerHTML = SSD1;
-		
-		document.getElementById("ND2").innerHTML = ND2;
-		document.getElementById("DA2").innerHTML = DA2;
-		document.getElementById("SSD2").innerHTML = SSD2;
-		var currentRL1_PValue = document.getElementById("RL1_P").value;
-		var currentRL1_FValue = document.getElementById("RL1_F").value;
-		var currentRL2_PValue = document.getElementById("RL2_P").value;
-		var currentRL2_FValue = document.getElementById("RL2_F").value;
-
-				if(DataJson.RL1_P == 1 && currentRL1_PValue !== "ON")
-			  {
-				document.getElementById("RL1_P").value = "ON";
-				AnimatedtoggleNode1(1);
-			  }
-			  else if(DataJson.RL1_P == 0 && currentRL1_PValue !== "OFF")
-			  {
-				document.getElementById("RL1_P").value = "OFF";
-				AnimatedtoggleNode1(1);
-			  } 
-
-			  if(DataJson.RL1_F == 1 && currentRL1_FValue !== "ON")
-			  {
-				document.getElementById("RL1_F").value = "ON";
-				AnimatedtoggleNode1(2);
-				
-			  }
-			  else if(DataJson.RL1_F == 0 && currentRL1_FValue !== "OFF")
-			  {
-				document.getElementById("RL1_F").value = "OFF";
-				AnimatedtoggleNode1(2);
-			  } 
-			  
-
-
-			  if(DataJson.RL2_P == 1 && currentRL2_PValue !== "ON")
-			  {
-				document.getElementById("RL2_P").value = "ON";
-				AnimatedtoggleNode2(1)
-			  }
-			  else if(DataJson.RL2_P == 0 && currentRL2_PValue !== "OFF")
-			  {
-				document.getElementById("RL2_P").value = "OFF";
-				AnimatedtoggleNode2(1)
-			  } 
-	  
-			  if(DataJson.RL2_F == 1 && currentRL2_FValue !== "ON")
-			  {
-				document.getElementById("RL2_F").value = "ON";
-				AnimatedtoggleNode2(2)
-			  }
-			  else if(DataJson.RL2_F == 0 && currentRL2_FValue !== "OFF")
-			  {
-				document.getElementById("RL2_F").value = "OFF";
-				AnimatedtoggleNode2(2)
-			  } 
-					
-
-
-
-
-
-
-			 if(DataJson.S1 == 1)
-			  {
-		
-				document.getElementById("S1").innerHTML = "TURNNING ON";
-			  }
-			  else if(DataJson.S1 == 0)
-			  {
-	
-				document.getElementById("S1").innerHTML = "TURNNING OFF";
-
-			  } 
-			  
-			  if(DataJson.S2 == 1)
-			  {
-		
-				document.getElementById("S2").innerHTML = "TURNNING ON";
-			  }
-			  else if(DataJson.S1 == 0)
-			  {
-	
-				document.getElementById("S2").innerHTML = "TURNNING OFF";
-
-			  } 
-
-			
-			  
-			  
-				LineND1 = true;
-				LineDA1 = true;
-				LineSSD1 = true;
-		
-				LineND2 = true;
-				LineDA2 = true;
-				LineSSD2 = true;
-	
-	}
-	else 
-	{
-		console.log("JSON Error!!!");
-	}
-	
-
-}
-
-function IsJsonString(str)
-			{
-				try
-				{
-					JSON.parse(str);
-				} 
-				catch (e)
-				{
-					checkjson = false;
-					return false;
-				}
-				checkjson = true;
-				return true;
-			} 
-
-
-function Getbaodong(data)
-{
- switch(data)
- {
-	case 1:
-		{
-			console.log("Báo động 1");
-			mqttClient.send(topicpub,"{\"ID\":\"1\",\"BD\":\"1\"}");
-		}
-		
-		
-		break;
-	case 2:
-		{
-			console.log("Báo động 2");
-			mqttClient.send(topicpub,"{\"ID\":\"2\",\"BD\":\"1\"}");
-		}
-		break;
-	case 3:
-		
-		{
-			console.log("Báo động all 1");
-			mqttClient.send(topicpub,"{\"ID\":\"1\",\"BD\":\"1\"}");
-		}
-		break;
-	case 4:
-		{
-			console.log("Báo động all 2");
-			mqttClient.send(topicpub,"{\"ID\":\"2\",\"BD\":\"1\"}");
-		}
-		break;
- }
-  
-}
-
-
 function GETBUTTON(data)
 {
   switch(data)
@@ -1697,10 +1508,298 @@ case 3:
 			}
 		}
 		break;
-
+		case 6:
+			{
+				console.log("HẸN GIỜ");
+				var selectchongio = document.getElementById("chongio");
+				var chongio = selectchongio.options[selectchongio.selectedIndex].value;
+				console.log("chongio:" + chongio);
+				
+				var selectchonphut = document.getElementById("chonphut");
+				var chonphut = selectchonphut.options[selectchonphut.selectedIndex].value;
+				console.log("chonphut:" + chonphut);
+				
+				
+				var selectchonmode = document.getElementById("mode1");
+				var chonmode = selectchonmode.options[selectchonmode.selectedIndex].value;
+				console.log("chonmode:" + chonmode);
+				
+				
+				
+				if(chonmode == "1")
+				{
+					
+					var RX = "{\"S1\":\"1\",\"G1\":\""+chongio+"\",\"P1\":\""+chonphut+"\"}";
+					console.log("hẹn giờ bật ON:"+RX);
+					mqttClient.send(topicpub,RX);
+				}
+				else if(chonmode == "2")
+				{
+					console.log("tắt hẹn giờ bật");
+					mqttClient.send(topicpub,"{\"S1\":\"0\"}");
+				}
+				else if(chonmode == "3")
+				{
+					console.log("hẹn giờ tắt ON");
+					var RX = "{\"S2\":\"1\",\"G2\":\""+chongio+"\",\"P2\":\""+chonphut+"\"}";
+					console.log("hẹn giờ bật ON:"+RX);
+					mqttClient.send(topicpub,RX);
+				}
+				else if(chonmode == "4")
+				{
+					console.log("tắt hẹn giờ tắt");
+					mqttClient.send(topicpub,"{\"S2\":\"0\"}");
+				}
+				
+			}
+			break;	
 
 }
   
 }
+
+
+
+function MessageArrived(message) 
+{
+	console.log("Data ESP:" + message.payloadString);
+	
+	
+	IsJsonString(message.payloadString);
+	
+	if(checkjson)
+	{
+	   console.log("JSON OK!!!");
+	   var  DataVDK = message.payloadString;            
+       console.log("Dữ liệu VDK:" + DataVDK);
+		
+		var DataJson = JSON.parse(DataVDK); 
+ 
+		
+		ND1 =  DataJson.ND1;
+		DA1 = DataJson.DA1;
+		SSD1 = DataJson.SSD1;
+
+		
+		LineND1_0 = DataJson.ND1;
+		
+		LineDA1_0 = DataJson.DA1;
+
+		LineSSD1_0 = DataJson.SSD1;
+		
+		//--------------
+			 
+		ND2 =  DataJson.ND2;
+		DA2 = DataJson.DA2;
+		SSD2 = DataJson.SSD2;
+
+		
+		LineND2_0 = DataJson.ND2;
+		
+		LineDA2_0 = DataJson.DA2;
+		
+		LineSSD2_0 = DataJson.SSD2;
+		
+		//RL1_P =DataJson.RL1_P;
+		///RL1_F =DataJson.RL1_F;
+		//RL2_P =DataJson.RL2_P;
+		//RL2_F =DataJson.RL2_F;
+
+		document.getElementById("T1node1").innerHTML = DataJson.T1;
+		document.getElementById("T2node1").innerHTML = DataJson.T2;
+		document.getElementById("T1node2").innerHTML = DataJson.T1;
+		document.getElementById("T2node2").innerHTML = DataJson.T2;
+		
+		document.getElementById("T1home1").innerHTML = DataJson.T1;
+		document.getElementById("T2home1").innerHTML = DataJson.T2;
+		document.getElementById("T1home2").innerHTML = DataJson.T1;
+		document.getElementById("T2home2").innerHTML = DataJson.T2;
+
+
+		document.getElementById("ND1home").innerHTML = ND1;
+		document.getElementById("DA1home").innerHTML = DA1;
+		document.getElementById("SSD1home").innerHTML = SSD1;
+		
+		document.getElementById("ND2home").innerHTML = ND2;
+		document.getElementById("DA2home").innerHTML = DA2;
+		document.getElementById("SSD2home").innerHTML = SSD2;
+
+
+
+		document.getElementById("ND1").innerHTML = ND1;
+		document.getElementById("DA1").innerHTML = DA1;
+		document.getElementById("SSD1").innerHTML = SSD1;
+		
+		document.getElementById("ND2").innerHTML = ND2;
+		document.getElementById("DA2").innerHTML = DA2;
+		document.getElementById("SSD2").innerHTML = SSD2;
+
+
+
+
+		var currentRL1_PValue = document.getElementById("RL1_P").value;
+		var currentRL1_FValue = document.getElementById("RL1_F").value;
+		var currentRL2_PValue = document.getElementById("RL2_P").value;
+		var currentRL2_FValue = document.getElementById("RL2_F").value;
+
+			if(DataJson.RL1_P == 1 && currentRL1_PValue !== "ON")
+			  {
+				document.getElementById("RL1_P").value = "ON";
+				AnimatedtoggleNode1(1);
+			  }
+			  else if(DataJson.RL1_P == 0 && currentRL1_PValue !== "OFF")
+			  {
+				document.getElementById("RL1_P").value = "OFF";
+				AnimatedtoggleNode1(1);
+			  } 
+
+			  if(DataJson.RL1_F == 1 && currentRL1_FValue !== "ON")
+			  {
+				document.getElementById("RL1_F").value = "ON";
+				AnimatedtoggleNode1(2);
+				
+			  }
+			  else if(DataJson.RL1_F == 0 && currentRL1_FValue !== "OFF")
+			  {
+				document.getElementById("RL1_F").value = "OFF";
+				AnimatedtoggleNode1(2);
+			  } 
+			  
+
+
+			  if(DataJson.RL2_P == 1 && currentRL2_PValue !== "ON")
+			  {
+				document.getElementById("RL2_P").value = "ON";
+				AnimatedtoggleNode2(1)
+			  }
+			  else if(DataJson.RL2_P == 0 && currentRL2_PValue !== "OFF")
+			  {
+				document.getElementById("RL2_P").value = "OFF";
+				AnimatedtoggleNode2(1)
+			  } 
+	  
+			  if(DataJson.RL2_F == 1 && currentRL2_FValue !== "ON")
+			  {
+				document.getElementById("RL2_F").value = "ON";
+				AnimatedtoggleNode2(2)
+			  }
+			  else if(DataJson.RL2_F == 0 && currentRL2_FValue !== "OFF")
+			  {
+				document.getElementById("RL2_F").value = "OFF";
+				AnimatedtoggleNode2(2)
+			  } 
+					
+
+
+
+
+
+			 if(DataJson.S1 == 1)
+			  {
+		
+				document.getElementById("S1node1").innerHTML = "TURNNING ON";
+				document.getElementById("S1node2").innerHTML = "TURNNING ON";
+				document.getElementById("S1home1").innerHTML = "TURNNING ON";
+				document.getElementById("S1home2").innerHTML = "TURNNING ON";
+			  }
+			  else if(DataJson.S1 == 0)
+			  {
+	
+				document.getElementById("S1node1").innerHTML = "TURNNING OFF";
+				document.getElementById("S1node2").innerHTML = "TURNNING OFF";
+				document.getElementById("S1home1").innerHTML = "TURNNING OFF";
+				document.getElementById("S1home2").innerHTML = "TURNNING OFF";
+			  } 
+			  
+			  if(DataJson.S2 == 1)
+			  {
+		
+				document.getElementById("S2node1").innerHTML = "TURNNING ON";
+				document.getElementById("S2node2").innerHTML = "TURNNING ON";
+				document.getElementById("S2home1").innerHTML = "TURNNING ON";
+				document.getElementById("S2home2").innerHTML = "TURNNING ON";
+			  }
+			  else if(DataJson.S1 == 0)
+			  {
+	
+				document.getElementById("S2node1").innerHTML = "TURNNING OFF";
+				document.getElementById("S2node2").innerHTML = "TURNNING OFF";
+				document.getElementById("S2home1").innerHTML = "TURNNING OFF";
+				document.getElementById("S2home2").innerHTML = "TURNNING OFF";
+			  } 
+
+			
+			  
+			  
+				LineND1 = true;
+				LineDA1 = true;
+				LineSSD1 = true;
+		
+				LineND2 = true;
+				LineDA2 = true;
+				LineSSD2 = true;
+	
+	}
+	else 
+	{
+		console.log("JSON Error!!!");
+	}
+	
+
+}
+
+function IsJsonString(str)
+			{
+				try
+				{
+					JSON.parse(str);
+				} 
+				catch (e)
+				{
+					checkjson = false;
+					return false;
+				}
+				checkjson = true;
+				return true;
+			} 
+
+
+function Getbaodong(data)
+{
+ switch(data)
+ {
+	case 1:
+		{
+			console.log("Báo động 1");
+			mqttClient.send(topicpub,"{\"ID\":\"1\",\"BD\":\"1\"}");
+		}
+		
+		
+		break;
+	case 2:
+		{
+			console.log("Báo động 2");
+			mqttClient.send(topicpub,"{\"ID\":\"2\",\"BD\":\"1\"}");
+		}
+		break;
+	case 3:
+		
+		{
+			console.log("Báo động all 1");
+			mqttClient.send(topicpub,"{\"ID\":\"1\",\"BD\":\"1\"}");
+		}
+		break;
+	case 4:
+		{
+			console.log("Báo động all 2");
+			mqttClient.send(topicpub,"{\"ID\":\"2\",\"BD\":\"1\"}");
+		}
+		break;
+ }
+  
+}
+
+
+
 
 
