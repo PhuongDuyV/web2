@@ -1605,15 +1605,10 @@ function MessageArrived(message)
 		//RL2_P =DataJson.RL2_P;
 		//RL2_F =DataJson.RL2_F;
 
-		document.getElementById("T1node1").innerHTML = DataJson.T1;
-		document.getElementById("T2node1").innerHTML = DataJson.T2;
-		document.getElementById("T1node2").innerHTML = DataJson.T1;
-		document.getElementById("T2node2").innerHTML = DataJson.T2;
+
 		
-		document.getElementById("T1home1").innerHTML = DataJson.T1;
-		document.getElementById("T2home1").innerHTML = DataJson.T2;
-		document.getElementById("T1home2").innerHTML = DataJson.T1;
-		document.getElementById("T2home2").innerHTML = DataJson.T2;
+		document.getElementById("T1").innerHTML = DataJson.T1;
+		document.getElementById("T2").innerHTML = DataJson.T2;
 
 
 		document.getElementById("ND1home").innerHTML = ND1;
@@ -1697,35 +1692,24 @@ function MessageArrived(message)
 			 if(DataJson.S1 == 1)
 			  {
 		
-				document.getElementById("S1node1").innerHTML = "TURNNING ON";
-				document.getElementById("S1node2").innerHTML = "TURNNING ON";
-				document.getElementById("S1home1").innerHTML = "TURNNING ON";
-				document.getElementById("S1home2").innerHTML = "TURNNING ON";
+				document.getElementById("S1").innerHTML = "TURNNING ON";
 			  }
 			  else if(DataJson.S1 == 0)
 			  {
 	
-				document.getElementById("S1node1").innerHTML = "TURNNING OFF";
-				document.getElementById("S1node2").innerHTML = "TURNNING OFF";
-				document.getElementById("S1home1").innerHTML = "TURNNING OFF";
-				document.getElementById("S1home2").innerHTML = "TURNNING OFF";
+				document.getElementById("S1").innerHTML = "TURNNING OFF";
+			
 			  } 
 			  
 			  if(DataJson.S2 == 1)
 			  {
 		
-				document.getElementById("S2node1").innerHTML = "TURNNING ON";
-				document.getElementById("S2node2").innerHTML = "TURNNING ON";
-				document.getElementById("S2home1").innerHTML = "TURNNING ON";
-				document.getElementById("S2home2").innerHTML = "TURNNING ON";
+				document.getElementById("S2").innerHTML = "TURNNING ON";
 			  }
 			  else if(DataJson.S1 == 0)
 			  {
 	
-				document.getElementById("S2node1").innerHTML = "TURNNING OFF";
-				document.getElementById("S2node2").innerHTML = "TURNNING OFF";
-				document.getElementById("S2home1").innerHTML = "TURNNING OFF";
-				document.getElementById("S2home2").innerHTML = "TURNNING OFF";
+				document.getElementById("S2").innerHTML = "TURNNING OFF";
 			  } 
 
 			
