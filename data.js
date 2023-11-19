@@ -1411,10 +1411,12 @@ function GETBUTTON(data)
 		if(TT_RL1_P == "ON")
 		{
 			mqttClient.send(topicpub,"{\"RL1_P\":\"0\"}");
+			document.getElementById("RL1_P").value = "OFF";
 		}
 		else if(TT_RL1_P == "OFF")
 		{
 			mqttClient.send(topicpub,"{\"RL1_P\":\"1\"}");
+			document.getElementById("RL1_P").value = "ON";
 		}
 	}
 		
@@ -1471,10 +1473,12 @@ case 3:
 		if(TT_RL1_F == "ON")
 		{
 			mqttClient.send(topicpub,"{\"RL1_F\":\"0\"}");
+			document.getElementById("RL1_F").value = "OFF";
 		}
 		else if(TT_RL1_F == "OFF")
 		{
 			mqttClient.send(topicpub,"{\"RL1_F\":\"1\"}");
+			document.getElementById("RL1_F").value = "ON";
 		}
 	}
 	break;
@@ -1485,10 +1489,12 @@ case 3:
 		if(TT_RL2_P == "ON")
 		{
 			mqttClient.send(topicpub,"{\"RL2_P\":\"0\"}");
+			document.getElementById("RL2_P").value = "OFF";
 		}
 		else if(TT_RL2_P == "OFF")
 		{
 			mqttClient.send(topicpub,"{\"RL2_P\":\"1\"}");
+			document.getElementById("RL2_P").value = "ON";
 		}
 	}
 		
@@ -1501,58 +1507,16 @@ case 3:
 			if(TT_RL2_F == "ON")
 			{
 				mqttClient.send(topicpub,"{\"RL2_F\":\"0\"}");
+				document.getElementById("RL2_F").value = "OFF";
 			}
 			else if(TT_RL2_F == "OFF")
 			{
 				mqttClient.send(topicpub,"{\"RL2_F\":\"1\"}");
+				document.getElementById("RL2_F").value = "ON";
 			}
 		}
 		break;
-		case 6:
-			{
-				console.log("HẸN GIỜ");
-				var selectchongio = document.getElementById("chongio");
-				var chongio = selectchongio.options[selectchongio.selectedIndex].value;
-				console.log("chongio:" + chongio);
-				
-				var selectchonphut = document.getElementById("chonphut");
-				var chonphut = selectchonphut.options[selectchonphut.selectedIndex].value;
-				console.log("chonphut:" + chonphut);
-				
-				
-				var selectchonmode = document.getElementById("mode1");
-				var chonmode = selectchonmode.options[selectchonmode.selectedIndex].value;
-				console.log("chonmode:" + chonmode);
-				
-				
-				
-				if(chonmode == "1")
-				{
-					
-					var RX = "{\"S1\":\"1\",\"G1\":\""+chongio+"\",\"P1\":\""+chonphut+"\"}";
-					console.log("hẹn giờ bật ON:"+RX);
-					mqttClient.send(topicpub,RX);
-				}
-				else if(chonmode == "2")
-				{
-					console.log("tắt hẹn giờ bật");
-					mqttClient.send(topicpub,"{\"S1\":\"0\"}");
-				}
-				else if(chonmode == "3")
-				{
-					console.log("hẹn giờ tắt ON");
-					var RX = "{\"S2\":\"1\",\"G2\":\""+chongio+"\",\"P2\":\""+chonphut+"\"}";
-					console.log("hẹn giờ bật ON:"+RX);
-					mqttClient.send(topicpub,RX);
-				}
-				else if(chonmode == "4")
-				{
-					console.log("tắt hẹn giờ tắt");
-					mqttClient.send(topicpub,"{\"S2\":\"0\"}");
-				}
-				
-			}
-			break;	
+		
 
 }
   
