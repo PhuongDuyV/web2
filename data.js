@@ -82,7 +82,11 @@ var T1 = "0";
 var T2 = "0";
 
 
+var S3 = "0";
+var S4 = "0";
 
+var T3 = "0";
+var T4 = "0";
 
 
 var LineND2 = false;
@@ -1423,7 +1427,7 @@ function GETBUTTON(data)
 	break;
 	case 2:
 	{
-		console.log("HẸN GIỜ");
+		console.log("HẸN GIỜ NODE 1");
 		var selectchongio = document.getElementById("chongio");
 		var chongio = selectchongio.options[selectchongio.selectedIndex].value;
 		console.log("chongio:" + chongio);
@@ -1443,24 +1447,24 @@ function GETBUTTON(data)
 		{
 			
 			var RX = "{\"S1\":\"1\",\"G1\":\""+chongio+"\",\"P1\":\""+chonphut+"\"}";
-			console.log("hẹn giờ bật ON:"+RX);
+			console.log("Hẹn giờ bật node 1 ON:"+RX);
 			mqttClient.send(topicpub,RX);
 		}
 		else if(chonmode == "2")
 		{
-			console.log("tắt hẹn giờ bật");
+			console.log("Tắt hẹn giờ bật node 1");
 			mqttClient.send(topicpub,"{\"S1\":\"0\"}");
 		}
 		else if(chonmode == "3")
 		{
-			console.log("hẹn giờ tắt ON");
+			console.log("Hẹn giờ tắt node 1 ON");
 			var RX = "{\"S2\":\"1\",\"G2\":\""+chongio+"\",\"P2\":\""+chonphut+"\"}";
-			console.log("hẹn giờ bật ON:"+RX);
+			console.log("Hẹn giờ bật node 1 ON:"+RX);
 			mqttClient.send(topicpub,RX);
 		}
 		else if(chonmode == "4")
 		{
-			console.log("tắt hẹn giờ tắt");
+			console.log("Tắt hẹn giờ tắt node 1");
 			mqttClient.send(topicpub,"{\"S2\":\"0\"}");
 		}
 		
@@ -1516,6 +1520,52 @@ case 3:
 			}
 		}
 		break;
+
+		case 6:
+			{
+				console.log("HẸN GIỜ NODE 2");
+				var selectchongio2 = document.getElementById("chongio2");
+				var chongio2 = selectchongio2.options[selectchongio2.selectedIndex].value;
+				console.log("chongio2:" + chongio2);
+				
+				var selectchonphut2 = document.getElementById("chonphut2");
+				var chonphut2 = selectchonphut2.options[selectchonphut2.selectedIndex].value;
+				console.log("chonphut2:" + chonphut2);
+				
+				
+				var selectchonmode2 = document.getElementById("mode2");
+				var chonmode2 = selectchonmode2.options[selectchonmode2.selectedIndex].value;
+				console.log("chonmode2:" + chonmode2);
+				
+				
+				
+				if(chonmode2 == "1")
+				{
+					
+					var RX = "{\"S3\":\"1\",\"G3\":\""+chongio2+"\",\"P3\":\""+chonphut2+"\"}";
+					console.log("Hẹn giờ bật node 2 ON:"+RX);
+					mqttClient.send(topicpub,RX);
+				}
+				else if(chonmode2 == "2")
+				{
+					console.log("Tắt hẹn giờ bật node 2");
+					mqttClient.send(topicpub,"{\"S3\":\"0\"}");
+				}
+				else if(chonmode2 == "3")
+				{
+					console.log("Hẹn giờ tắt node 2 ON");
+					var RX = "{\"S4\":\"1\",\"G4\":\""+chongio2+"\",\"P4\":\""+chonphut2+"\"}";
+					console.log("Hẹn giờ bật  node 2 ON:"+RX);
+					mqttClient.send(topicpub,RX);
+				}
+				else if(chonmode2 == "4")
+				{
+					console.log("Tắt hẹn giờ tắt node 2");
+					mqttClient.send(topicpub,"{\"S4\":\"0\"}");
+				}
+				
+			}
+			break;	
 		
 
 }
@@ -1675,6 +1725,30 @@ function MessageArrived(message)
 	
 				document.getElementById("S2").innerHTML = "TURNNING OFF";
 			  } 
+
+			  if(DataJson.S3 == 1)
+			  {
+		
+				document.getElementById("S3").innerHTML = "TURNNING ON";
+			  }
+			  else if(DataJson.S3 == 0)
+			  {
+	
+				document.getElementById("S3").innerHTML = "TURNNING OFF";
+			  } 
+
+			  if(DataJson.S4 == 1)
+			  {
+		
+				document.getElementById("S4").innerHTML = "TURNNING ON";
+			  }
+			  else if(DataJson.S4 == 0)
+			  {
+	
+				document.getElementById("S4").innerHTML = "TURNNING OFF";
+			  } 
+
+
 
 			
 			  
