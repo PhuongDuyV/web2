@@ -346,7 +346,7 @@ function LoadForm()
 		var chart_doam1 = new google.visualization.Gauge(document.getElementById('chart_doam_1'));
 		var chart_ga1 = new google.visualization.Gauge(document.getElementById('chart_ga_1'));
 		chartnhietdo_1.draw(datanhietdo_1, optionsnhietdo_1);
-    chart_doam1.draw(datadoam_1, optionsdoam_1);
+   	 chart_doam1.draw(datadoam_1, optionsdoam_1);
 		chart_ga1.draw(dataga_1, optionsga_1);
 		//------------------------------------
 		var chartnhietdo_2 = new google.visualization.Gauge(document.getElementById('chart_nhietdo_2')); 
@@ -603,7 +603,7 @@ var datalinega_2 = google.visualization.arrayToDataTable([
 			chartArea: {
 				backgroundColor: {
 					stroke: '#4322c0',
-					strokeWidth: 1,
+					strokeWidth: 3,
 				
 				}
 			},
@@ -835,7 +835,7 @@ var optionslinega_1 = {
 			  chartArea: {
 				  backgroundColor: {
 					  stroke: '#4322c0',
-					  strokeWidth: 1,
+					  strokeWidth: 3,
 				  
 				  }
 			  },
@@ -1361,17 +1361,17 @@ setInterval(function() {
 				//=======================================================
 			
 		
-var hostname = "ngoinhaiot.com";
-var port = 2222;
+var hostname = "broker.hivemq.com";
+var port = 8000;
 var clientId = "Web";
 clientId += new Date().getUTCMilliseconds();
 
 var user_mqtt = "nhatquang3102";
 var pass_mqtt = "4CFDA840F1F84281";
 
-var topicpub = "nhatquang3102/B";
+var topicpub = "nhatquang3102B";
 
-var topicsub = "nhatquang3102/A"; // topic nhận dữ liệu của ESP
+var topicsub = "nhatquang3102A"; // topic nhận dữ liệu của ESP
 
 mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
 mqttClient.onMessageArrived = MessageArrived;
@@ -1623,7 +1623,8 @@ function MessageArrived(message)
 		
 		document.getElementById("T1").innerHTML = DataJson.T1;
 		document.getElementById("T2").innerHTML = DataJson.T2;
-
+		document.getElementById("T3").innerHTML = DataJson.T3;
+		document.getElementById("T4").innerHTML = DataJson.T4;
 
 		document.getElementById("ND1home").innerHTML = ND1;
 		document.getElementById("DA1home").innerHTML = DA1;
